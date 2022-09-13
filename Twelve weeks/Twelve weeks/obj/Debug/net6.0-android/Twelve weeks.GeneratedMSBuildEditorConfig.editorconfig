@@ -1,0 +1,112 @@
+is_global = true
+build_property.TargetFramework = net6.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Twelve_weeks
+build_property.ProjectDir = D:\VS projects\Twelve weeks\Twelve weeks\
+
+[D:/VS projects/Twelve weeks/Twelve weeks/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Components/DayPanel.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.DayPanel.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\DayPanel.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\DayPanel.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Components/DayTask.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.DayTask.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\DayTask.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\DayTask.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Components/DoneButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.DoneButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\DoneButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\DoneButton.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Components/PageButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.PageButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\PageButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\PageButton.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Components/PagesPanel.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.PagesPanel.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\PagesPanel.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\PagesPanel.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Components/RoutineTask.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.RoutineTask.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\RoutineTask.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\RoutineTask.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Pages/Days.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.Days.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Days.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Days.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Pages/DayTasks.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.DayTasks.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\DayTasks.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\DayTasks.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Pages/FutureView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.FutureView.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FutureView.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FutureView.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Pages/Life.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.Life.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Life.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Life.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Pages/Routine.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.Routine.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Routine.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Routine.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Pages/WeekPlans.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.WeekPlans.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\WeekPlans.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\WeekPlans.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Pages/YearPlans.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.YearPlans.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\YearPlans.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\YearPlans.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/VS projects/Twelve weeks/Twelve weeks/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Twelve_weeks.PageButton"
+             Loaded="ContentView_Loaded"
+             HorizontalOptions="Center">
+    
+    <StackLayout Orientation="Vertical" 
+                 Margin="5">
+        
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+        </StackLayout.GestureRecognizers>
+        
+        <!--<Image Source="dotnet_bot.svg" WidthRequest="50" HeightRequest="50"/>-->
+        <Label Text="{Binding PageTitle}"
+               LineBreakMode="WordWrap"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Center"
+               MaximumWidthRequest="50"
+               />
+        
+    </StackLayout>
+</ContentView>

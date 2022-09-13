@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Twelve_weeks.Components.DayTasks"
+             Title="DayTasks">
+    <Grid BackgroundColor="{StaticResource LightBlack}">
+
+        <Image Source="back.png"
+               WidthRequest="50" HeightRequest="50"
+               HorizontalOptions="Start" VerticalOptions="Start">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoBackButton_Clicked"/>
+            </Image.GestureRecognizers>
+        </Image>
+        
+        <VerticalStackLayout x:Name="DefaultGrid">
+            <Label x:Name="PageTitle" Text="Day tasks" Style="{StaticResource TitleH1}"/>
+
+            <ScrollView HeightRequest="550">
+                <StackLayout x:Name="TasksStackLayout">
+
+                </StackLayout>
+
+            </ScrollView>
+
+
+            <Button WidthRequest="100" HeightRequest="50"
+                    VerticalOptions="End"
+                    Margin="10"
+                    Style="{StaticResource DefaultButton}"
+                    x:Name="AddTask"
+                    Text="Add task"
+                    Clicked="ChangeAddTaskGridVisability"
+                    />
+        </VerticalStackLayout>
+
+        <Grid x:Name="AddTaskGrid"
+              IsVisible="false">
+            <Frame BackgroundColor="{StaticResource DarkBlack}"
+                   HorizontalOptions="Center"
+                   Margin="10, 50, 10, 5"
+                   CornerRadius="10">
+
+                <VerticalStackLayout>
+                    <Label Text="Title" Style="{StaticResource TitleH2}"/>
+
+                    <Editor x:Name="TaskTitle" Style="{StaticResource EditorH2}"
+                            HorizontalOptions="Center"/>
+
+                    <Label Text="Description" Style="{StaticResource TitleH2}"/>
+
+                    <Editor x:Name="TaskDescription" Style="{StaticResource EditorH1}"
+                            HorizontalOptions="Center"/>
+
+                    <Button x:Name="SaveTask" Text="Add"
+                            WidthRequest="150" HeightRequest="50"
+                            Style="{StaticResource DefaultButton}"
+                            Margin="10"
+                            VerticalOptions="End"
+                            Clicked="SaveTask_Clicked"/>
+
+                    <Button x:Name="Exit" Text="Exit"
+                            WidthRequest="70" HeightRequest="40"
+                            Clicked="ChangeAddTaskGridVisability"
+                            FontSize="10"
+                            Style="{StaticResource DefaultButton}"
+                            Margin="10"
+                            VerticalOptions="End"
+                            />
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

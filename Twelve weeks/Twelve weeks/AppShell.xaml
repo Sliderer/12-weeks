@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Twelve_weeks"
+             xmlns:pages="clr-namespace:Twelve_weeks.Pages"
+             x:Class="Twelve_weeks.AppShell"
+             Loaded="Shell_Loaded"
+             Style="{StaticResource BaseStyle}"
+       >
+  
+
+    <TabBar x:Name="TabBar">
+
+        <ShellContent Title="Routine"
+                      ContentTemplate="{DataTemplate pages:Routine}"/>
+        <ShellContent Title="Days"
+                      ContentTemplate="{DataTemplate pages:Days}"/>
+        <ShellContent Title="Weeks"
+                      ContentTemplate="{DataTemplate pages:WeekPlans}"/>
+        <ShellContent Title="Years"
+                      ContentTemplate="{DataTemplate pages:YearPlans}"/>
+        <ShellContent Title="Life"
+                      ContentTemplate="{DataTemplate pages:Life}"/>
+        <ShellContent Title="Future view"
+                      ContentTemplate="{DataTemplate pages:FutureView}"/>
+    </TabBar>
+
+    <!--<FlyoutItem Title="Routine">
+
+        <ShellContent Title="Routine"
+                      ContentTemplate="{DataTemplate pages:Routine}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Day plans">
+        <ShellContent Title="Day plans"
+                      ContentTemplate="{DataTemplate pages:DayPlans}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Week plans">
+        <ShellContent Title="Week plans"
+                      ContentTemplate="{DataTemplate pages:WeekPlans}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Year plans">
+        <ShellContent Title="Year plans"
+                      ContentTemplate="{DataTemplate pages:YearPlans}"/>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Life">
+        <ShellContent Title="Life"
+                      ContentTemplate="{DataTemplate pages:Life}"/>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Future view">
+        <ShellContent Title="Future view"
+                      ContentTemplate="{DataTemplate pages:FutureView}"/>
+    </FlyoutItem>-->
+</Shell>
