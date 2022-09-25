@@ -4,17 +4,18 @@ using Twelve_weeks.Components;
 using Twelve_weeks.Interfaces;
 using System.Diagnostics;
 using Twelve_weeks.Enums;
+using Twelve_weeks.Pages.Interfaces;
 
-public partial class Routine : ContentPage
+public partial class Routine : ContentPage, ITaskPanel<RoutineTaskModel, RoutineTask>
 {
 	public Routine()
 	{
 		InitializeComponent();
 
-		FillTasks();
+        FillTaskStack();
     }
 
-	private void FillTasks()
+	public void FillTaskStack()
 	{
 		List<RoutineTaskModel> models = Singletone.InfoSaver.GetModelsList<RoutineTaskModel>(
 			FileNamesEnum.FileNames.RoutineTasksFileName
@@ -26,7 +27,7 @@ public partial class Routine : ContentPage
         }
 	}
 
-	private void AddTaskToStack(RoutineTaskModel model)
+	public void AddTaskToStack(RoutineTaskModel model)
 	{
         RoutineTask task = new RoutineTask(model);
         task.deleteThisTask += DeleteTask;
@@ -35,33 +36,33 @@ public partial class Routine : ContentPage
 
 	private void AddTask_Clicked(object sender, EventArgs e)
 	{
-		SwapGridsVisability();
+		ChangeGridsVisability(sender, e);
     }
 
-    private void SaveTask_Clicked(object sender, EventArgs e)
+    public void SaveTask_Clicked(object sender, EventArgs e)
     {
 		string title = TaskTitle.Text;
 		string description = TaskDescription.Text;
 		RoutineTaskModel model = new RoutineTaskModel() { title = title, description = description };
 		AddTaskToStack(model);
 		Singletone.InfoSaver.SaveModel(model, FileNamesEnum.FileNames.RoutineTasksFileName);
-		SwapGridsVisability();
+        ChangeGridsVisability(sender, e);
 		ClearEditors();
     }
 
     private void Exit_Clicked(object sender, EventArgs e)
     {
-		SwapGridsVisability();
+        ChangeGridsVisability(sender, e);
 		ClearEditors();
     }
 
-    private void SwapGridsVisability()
+    public void ChangeGridsVisability(object sender, EventArgs e)
 	{
 		DefaultGrid.IsVisible = !DefaultGrid.IsVisible;
 		AddTaskGrid.IsVisible = !AddTaskGrid.IsVisible;
     }
 
-	private async void DeleteTask(RoutineTask task)
+	public async void DeleteTask(RoutineTask task)
 	{
 		bool result = await DisplayAlert("Confirm action", "Do you want delet this task?", "YES", "NO");
         if (result)
@@ -71,7 +72,7 @@ public partial class Routine : ContentPage
         }
 	}
 
-	private void ClearEditors()
+	public void ClearEditors()
 	{
 		TaskTitle.Text = "";
 		TaskDescription.Text = "";

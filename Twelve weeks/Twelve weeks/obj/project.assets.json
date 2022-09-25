@@ -52537,11 +52537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VS projects\\Twelve weeks\\Twelve weeks\\Twelve weeks.csproj",
+      "projectUniqueName": "D:\\Repositoies\\12-weeks\\Twelve weeks\\Twelve weeks\\Twelve weeks.csproj",
       "projectName": "Twelve weeks",
-      "projectPath": "D:\\VS projects\\Twelve weeks\\Twelve weeks\\Twelve weeks.csproj",
+      "projectPath": "D:\\Repositoies\\12-weeks\\Twelve weeks\\Twelve weeks\\Twelve weeks.csproj",
       "packagesPath": "C:\\Users\\a6271\\.nuget\\packages\\",
-      "outputPath": "D:\\VS projects\\Twelve weeks\\Twelve weeks\\obj\\",
+      "outputPath": "D:\\Repositoies\\12-weeks\\Twelve weeks\\Twelve weeks\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

@@ -2,8 +2,9 @@ namespace Twelve_weeks.Components;
 using Twelve_weeks.Enums;
 using Twelve_weeks.Models;
 using Twelve_weeks.Pages;
+using Twelve_weeks.Pages.Interfaces;
 
-public partial class DayTasks : ContentPage
+public partial class DayTasks : ContentPage, ITaskPanel<DayTaskModel, DayTask>
 {
 	public DayTasks()
 	{
@@ -11,7 +12,7 @@ public partial class DayTasks : ContentPage
         FillTaskStack();
     }
 
-    private void FillTaskStack()
+    public void FillTaskStack()
     {
         List<DayTaskModel> models = Singletone.InfoSaver.GetModelsList<DayTaskModel>(
             FileNamesEnum.FileNames.DayTasksFileName
@@ -27,13 +28,12 @@ public partial class DayTasks : ContentPage
         }
     }
 
-
 	private void GoBackButton_Clicked(object sender, EventArgs e)
 	{
 		AppShell.OpenPage(nameof(Days));
 	}
 
-	private void SaveTask_Clicked(object sender, EventArgs e)
+	public void SaveTask_Clicked(object sender, EventArgs e)
 	{
         string title = TaskTitle.Text;
         string description = TaskDescription.Text;
@@ -41,24 +41,24 @@ public partial class DayTasks : ContentPage
         AddTaskToStack(model);
         Singletone.InfoSaver.SaveModel(model, FileNamesEnum.FileNames.DayTasksFileName);
 
-        ChangeAddTaskGridVisability(sender, e);
+        ChangeGridsVisability (sender, e);
     }
 
-    private void ChangeAddTaskGridVisability(object sender, EventArgs e)
+    public void ChangeGridsVisability(object sender, EventArgs e)
     {
         AddTaskGrid.IsVisible = !AddTaskGrid.IsVisible;
         DefaultGrid.IsVisible = !DefaultGrid.IsVisible;
 		ClearEditors();
     }
 
-    private void AddTaskToStack(DayTaskModel model) 
+    public void AddTaskToStack(DayTaskModel model) 
     {
         DayTask task = new DayTask(model);
         task.deleteThisTask += DeleteTask;
         TasksStackLayout.Children.Add(task); ;
     }
 
-    private async void DeleteTask(DayTask task)
+    public async void DeleteTask(DayTask task)
     {
         bool result = await DisplayAlert("Confirm action", "Do you want delet this task?", "YES", "NO");
         if (result)
@@ -68,7 +68,7 @@ public partial class DayTasks : ContentPage
         }
     }
 
-    private void ClearEditors()
+    public void ClearEditors()
     {
         TaskTitle.Text = "";
         TaskDescription.Text = "";

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "buC4QjRpVIekOgiiFly2wb9j1TCAf4bi3GGJXCWaMWtOa1/vHGyJV1SE/UOnNj3uC7mXaDyN2/NOFpwrKlvMNg==",
+  "dgSpecHash": "Z58zWLIlKLZ3q8vBL1XDKglK+xVDcqnbweoNQ176Ui5Q+NFg46R7RC2e+wWtC81gP8ayf3iby9Z929JxZEyfdQ==",
   "success": true,
-  "projectFilePath": "D:\\VS projects\\Twelve weeks\\Twelve weeks\\Twelve weeks.csproj",
+  "projectFilePath": "D:\\Repositoies\\12-weeks\\Twelve weeks\\Twelve weeks\\Twelve weeks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\a6271\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\a6271\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
