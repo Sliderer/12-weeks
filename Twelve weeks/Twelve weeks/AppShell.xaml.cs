@@ -15,11 +15,12 @@ public partial class AppShell : Shell
     
         Routing.RegisterRoute(nameof(Routine), typeof(Routine));
         Routing.RegisterRoute(nameof(Days), typeof(Days));
-        Routing.RegisterRoute(nameof(WeekPlans), typeof(WeekPlans));
+        Routing.RegisterRoute(nameof(Weeks), typeof(Weeks));
         Routing.RegisterRoute(nameof(YearPlans), typeof(YearPlans));
         Routing.RegisterRoute(nameof(Life), typeof(Life));
         Routing.RegisterRoute(nameof(FutureView), typeof(FutureView));
         Routing.RegisterRoute(nameof(DayTasks), typeof(DayTasks));
+        Routing.RegisterRoute(nameof(WeekTasks), typeof(WeekTasks));
         singletone = new Singletone(new FileSaver(), new DatesSaver());
     }
 

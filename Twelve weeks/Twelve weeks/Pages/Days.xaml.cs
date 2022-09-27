@@ -12,28 +12,23 @@ public partial class Days : ContentPage
 		InitializeComponent();
 
 		List<DayModel> models = Singletone.InfoSaver.GetModelsList<DayModel>(
-			FileNamesEnum.FileNames.LastEnterFileName
+			FileNamesEnum.FileNames.DaysFileName
 		).ToList();
 
-		//Debug.WriteLine("START");
-		//DayModel DayModel = new DayModel() { progress = 0 };
-		//DayModel.GetJsonString();
-		//foreach (var model in models)
-		//{
-		//	model.GetJsonString();
-		//}
-		foreach (DayModel model in models)
-		{
-			
-			DaysStackLayout.Children.Add(new DayPanel(model));
-		}
-
+		//Debug.WriteLine(models[models.Count - 1].date.ToString());
 
 		if (models.Count == 0 || models[models.Count - 1].date < DateOnly.FromDateTime(DateTime.Now))
 		{
 			DayModel dayModel = new DayModel() { date = DateOnly.FromDateTime(DateTime.Now), progress = 0 };
-			DaysStackLayout.Children.Add(new DayPanel(dayModel));
-			Singletone.InfoSaver.SaveModel(dayModel, FileNamesEnum.FileNames.LastEnterFileName);
+			models.Add(dayModel);
+			Singletone.InfoSaver.SaveModel(dayModel, FileNamesEnum.FileNames.DaysFileName);
 		}
-	}
+
+        models.Reverse();
+
+        foreach (var model in models)
+        {
+            DaysStackLayout.Children.Add(new DayPanel(model));
+        }
+    }
 }

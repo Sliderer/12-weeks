@@ -24,7 +24,10 @@ namespace Twelve_weeks.Saving
             FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.ThreeYearPlanFileName));
             FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.RoutineTasksFileName));
             FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.DayTasksFileName));
-            //FilesController.DeleteFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.LastEnterFileName));
+            FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.DaysFileName));
+            FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.WeeksFileName));
+            FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.WeekTasksFileName));
+            //FilesController.DeleteFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.WeeksFileName));
             //FilesController.DeleteFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.RoutineTasksFileName));
             //Debug.WriteLine("FILE:" + FilesController.ReadFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.LastEnterFileName)));
         }

@@ -8,8 +8,8 @@ namespace Twelve_weeks.Interfaces
 {
     internal interface IDatesSaver
     {
-        DateTime GetLastEnterDate();
+        //DateTime GetLastEnterDate();
 
-        void UpdateEnterDate();
+        //void UpdateEnterDate();
     }
 }

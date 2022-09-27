@@ -15,10 +15,10 @@
         </Frame.GestureRecognizers>
         <VerticalStackLayout>
             <HorizontalStackLayout>
-                <Label x:Name="Date" Text="{Binding Path=date, StringFormat='Date {0}' }" Style="{StaticResource TaskTextH1}"/>
+                <Label x:Name="Date" Text="{Binding Path=date, StringFormat='Date: {0}' }" Style="{StaticResource TaskTextH1}"/>
 
             </HorizontalStackLayout>
-            <Label x:Name="Progress" Text="{Binding progress}"  Style="{StaticResource TaskTextH1}"/>
+            <Label x:Name="Progress" Text="{Binding Path=progress, StringFormat='Progress: {0}'}"  Style="{StaticResource TaskTextH1}"/>
 
         </VerticalStackLayout>
     </Frame>

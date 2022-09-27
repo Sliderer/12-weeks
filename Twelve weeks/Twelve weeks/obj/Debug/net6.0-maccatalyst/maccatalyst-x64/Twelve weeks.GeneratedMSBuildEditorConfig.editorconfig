@@ -57,6 +57,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.Ro
 build_metadata.AdditionalFiles.TargetPath = Components\RoutineTask.xaml
 build_metadata.AdditionalFiles.RelativePath = Components\RoutineTask.xaml
 
+[D:/Repositoies/12-weeks/Twelve weeks/Twelve weeks/Components/WeekPanel.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.WeekPanel.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\WeekPanel.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\WeekPanel.xaml
+
+[D:/Repositoies/12-weeks/Twelve weeks/Twelve weeks/Components/WeekTask.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Components.WeekTask.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\WeekTask.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\WeekTask.xaml
+
 [D:/Repositoies/12-weeks/Twelve weeks/Twelve weeks/Pages/Days.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.Days.xaml
@@ -87,11 +99,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.Routine
 build_metadata.AdditionalFiles.TargetPath = Pages\Routine.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Routine.xaml
 
-[D:/Repositoies/12-weeks/Twelve weeks/Twelve weeks/Pages/WeekPlans.xaml]
+[D:/Repositoies/12-weeks/Twelve weeks/Twelve weeks/Pages/Weeks.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.WeekPlans.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\WeekPlans.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\WeekPlans.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.Weeks.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Weeks.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Weeks.xaml
+
+[D:/Repositoies/12-weeks/Twelve weeks/Twelve weeks/Pages/WeekTasks.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Twelve_weeks.Pages.WeekTasks.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\WeekTasks.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\WeekTasks.xaml
 
 [D:/Repositoies/12-weeks/Twelve weeks/Twelve weeks/Pages/YearPlans.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

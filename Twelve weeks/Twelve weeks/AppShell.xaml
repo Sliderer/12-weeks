@@ -16,7 +16,7 @@
         <ShellContent Title="Days"
                       ContentTemplate="{DataTemplate pages:Days}"/>
         <ShellContent Title="Weeks"
-                      ContentTemplate="{DataTemplate pages:WeekPlans}"/>
+                      ContentTemplate="{DataTemplate pages:Weeks}"/>
         <ShellContent Title="Years"
                       ContentTemplate="{DataTemplate pages:YearPlans}"/>
         <ShellContent Title="Life"

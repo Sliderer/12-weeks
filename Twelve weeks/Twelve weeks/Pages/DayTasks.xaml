@@ -30,7 +30,7 @@
                     Style="{StaticResource DefaultButton}"
                     x:Name="AddTask"
                     Text="Add task"
-                    Clicked="ChangeAddTaskGridVisability"
+                    Clicked="ChangeGridsVisability"
                     />
         </VerticalStackLayout>
 
@@ -61,7 +61,7 @@
 
                     <Button x:Name="Exit" Text="Exit"
                             WidthRequest="70" HeightRequest="40"
-                            Clicked="ChangeAddTaskGridVisability"
+                            Clicked="ChangeGridsVisability"
                             FontSize="10"
                             Style="{StaticResource DefaultButton}"
                             Margin="10"
