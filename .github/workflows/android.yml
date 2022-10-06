@@ -1,25 +1,57 @@
-name: Build Xamarin.Android app
+name: CI Build
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true                     # Disable the .NET logo
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience
+  DOTNET_CLI_TELEMETRY_OPTOUT: true     
 
 jobs:
-  build:
-
-    runs-on: macos-latest
-
+  build-android:
+    runs-on: windows-2022
+    name: Android Build
     steps:
-    - uses: actions/checkout@v3
-    - name: Set default Xamarin SDK versions
-      run: |
-        $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Setup .NET Core SDK 5.0.x
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '5.0.x'
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+          include-prerelease: true
 
-    - name: Install dependencies
-      run: nuget restore <sln_file_path>
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'microsoft'
+          java-version: '11'
 
-    - name: Build
-      run: msbuild <csproj_file_path> /t:PackageForAndroid /p:Configuration=Debug
+      - name: Install MAUI Workloads
+        run: |
+          dotnet workload install android --ignore-failed-sources
+          dotnet workload install maui --ignore-failed-sources
+
+      - name: Restore Dependencies
+        run: dotnet restore src/MauiBeach/MauiBeach.csproj
+
+      - name: Build MAUI Android
+        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-android --no-restore
+
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: android-ci-build
+          path: src/MauiBeach/bin/Release/net6.0-android/*Signed.a*
+
+  
