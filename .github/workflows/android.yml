@@ -8,7 +8,7 @@ on:
       - '**/*.gitignore'
       - '**/*.gitattributes'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
 permissions:
   contents: read
@@ -27,10 +27,8 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
+        dotnet-version: 6.0.x
+    - name: Install MAUI workload
+      run: dotnet workload install maui
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build -c Release -f:net6.0-android
