@@ -19,39 +19,24 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true     
 
 jobs:
-  build-android:
-    runs-on: windows-2022
-    name: Android Build
+  build:
+    runs-on: macos-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - name: Set default Xamarin SDK versions
+      run: |
+        $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
 
-      - name: Setup .NET 6
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.x
-          include-prerelease: true
+    - name: Setup .NET Core SDK 5.0.x
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '5.0.x'
 
-      - uses: actions/setup-java@v2
-        with:
-          distribution: 'microsoft'
-          java-version: '11'
+    - name: Install dependencies
+      run: nuget restore "Twelve weeks/Twelve weeks.sln"
 
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install android --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
-
-      - name: Restore Dependencies
-        run: dotnet restore src/MauiBeach/MauiBeach.csproj
-
-      - name: Build MAUI Android
-        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-android --no-restore
-
-      - name: Upload Android Artifact
-        uses: actions/upload-artifact@v2.3.1
-        with:
-          name: android-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-android/*Signed.a*
+    - name: Build
+      run: msbuild "Twelve weeks/Twelve weeks/Twelve weeks.csproj" /t:PackageForAndroid /p:Configuration=Debug
 
   
