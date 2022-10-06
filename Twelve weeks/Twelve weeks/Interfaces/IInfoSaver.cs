@@ -17,5 +17,6 @@ namespace Twelve_weeks.Interfaces
         void SaveModel(IModel model, FileNamesEnum.FileNames fileName);
         IEnumerable<T> GetModelsList<T>(FileNamesEnum.FileNames fileName) where T: IModel;
         void DeleteModel(string jsonString, FileNamesEnum.FileNames fileName);
+        void ChangeTaskCompletion<T>(T model, FileNamesEnum.FileNames fileName) where T : IModel;
     }
 }

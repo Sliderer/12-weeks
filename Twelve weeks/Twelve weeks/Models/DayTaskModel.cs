@@ -13,6 +13,8 @@ namespace Twelve_weeks.Models
     public class DayTaskModel : IModel
     {
         public int id { get; set; }
+
+        public bool isDone { get; set; }
         public string title { get; set; }
         public string description { get; set; }
 

@@ -27,8 +27,8 @@ namespace Twelve_weeks.Saving
             FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.DaysFileName));
             FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.WeeksFileName));
             FilesController.CheckFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.WeekTasksFileName));
-            //FilesController.DeleteFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.WeeksFileName));
             //FilesController.DeleteFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.RoutineTasksFileName));
+            //FilesController.DeleteFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.WeekTasksFileName));
             //Debug.WriteLine("FILE:" + FilesController.ReadFile(fileNamesEnums.GetFileNameString(FileNamesEnum.FileNames.LastEnterFileName)));
         }
 
@@ -84,6 +84,21 @@ namespace Twelve_weeks.Saving
             string text = FilesController.ReadFile(fileNamesEnums.GetFileNameString(fileName));
             text = text.Replace(jsonString, "");
             Debug.WriteLine($"change: {text}");
+            FilesController.WriteFile(text, fileNamesEnums.GetFileNameString(fileName));
+        }
+
+        public void ChangeTaskCompletion<T>(T model, FileNames fileName) where T : IModel
+        {
+            string text = FilesController.ReadFile(fileNamesEnums.GetFileNameString(fileName));
+
+            string oldJsonString = model.GetJsonString();
+            model.isDone = !model.isDone;
+            string newJsonString = model.GetJsonString();
+
+            Debug.WriteLine($"EQUALS {text.Contains(oldJsonString)}");
+            text = text.Replace(oldJsonString, newJsonString);
+            Debug.WriteLine($"TEXT: {text} \n OLDSTRING: {oldJsonString}\n NEWSTRING: {newJsonString}");
+
             FilesController.WriteFile(text, fileNamesEnums.GetFileNameString(fileName));
         }
     }

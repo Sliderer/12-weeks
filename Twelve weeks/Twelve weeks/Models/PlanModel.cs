@@ -12,6 +12,7 @@ namespace Twelve_weeks.Models
     {
         public int id { get; set; }
         public string text { get; set; }
+        public bool isDone { get; set; }
 
         public string GetJsonString()
         {

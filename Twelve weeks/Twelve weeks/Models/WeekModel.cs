@@ -17,6 +17,7 @@ namespace Twelve_weeks.Models
         [JsonConverter(typeof(DateonlyJsonConverter))]
         public DateOnly date { get; set; }
         public int progress { get; set; }
+        public bool isDone { get; set; }
 
         public string GetJsonString()
         {

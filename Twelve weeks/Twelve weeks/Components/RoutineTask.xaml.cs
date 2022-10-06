@@ -7,8 +7,9 @@ public partial class RoutineTask : ContentView
 	private RoutineTaskModel model;
 	public delegate void DeleteThisTaskDelegate(RoutineTask model);
 	public event DeleteThisTaskDelegate deleteThisTask;
+    public event DeleteThisTaskDelegate changeCompletion;
 
-	public RoutineTask()
+    public RoutineTask()
 	{
 		InitializeComponent();
 	}
@@ -22,6 +23,11 @@ public partial class RoutineTask : ContentView
 	private void ContentView_Loaded(object sender, EventArgs e)
 	{
         BindingContext = model;
+        DoneButton.tapped += ChangeCompletion;
+        if (model.isDone)
+        {
+            DoneButton.SwitchMode();
+        }
     }
 
 	private void DeleteButton_Clicked(object sender, EventArgs e)
@@ -29,7 +35,13 @@ public partial class RoutineTask : ContentView
 		deleteThisTask?.Invoke(this);
     }
 
-	public RoutineTaskModel Model
+    public void ChangeCompletion(object sender, EventArgs e)
+    {
+        changeCompletion?.Invoke(this);
+        //System.Diagnostics.Debug.WriteLine("CHANGE");
+    }
+
+    public RoutineTaskModel Model
 	{
 		get
 		{

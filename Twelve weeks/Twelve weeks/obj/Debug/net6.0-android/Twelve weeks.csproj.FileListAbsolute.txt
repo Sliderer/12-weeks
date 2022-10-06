@@ -1984,3 +1984,4 @@ D:\Repositoies\12-weeks\Twelve weeks\Twelve weeks\obj\Debug\net6.0-android\stamp
 D:\Repositoies\12-weeks\Twelve weeks\Twelve weeks\obj\Debug\net6.0-android\stamp\_GenerateJavaStubs.stamp
 D:\Repositoies\12-weeks\Twelve weeks\Twelve weeks\obj\Debug\net6.0-android\stamp\_GeneratePackageManagerJava.stamp
 D:\Repositoies\12-weeks\Twelve weeks\Twelve weeks\obj\Debug\net6.0-android\stamp\_ResolveLibraryProjectImports.stamp
+D:\Repositoies\12-weeks\Twelve weeks\Twelve weeks\obj\Debug\net6.0-android\resizetizer\r\drawable\completed.png

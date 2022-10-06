@@ -18,6 +18,8 @@ namespace Twelve_weeks.Models
     {
         public int id { get; set; }
 
+        public bool isDone { get; set; }
+
         [JsonConverter(typeof(DateonlyJsonConverter))]
         public DateOnly date { get; set; }
         public int progress { get; set; }

@@ -9,6 +9,7 @@ namespace Twelve_weeks.Interfaces
     public interface IModel
     {
         int id { get; set; }
+        bool isDone { get; set; }
         string GetJsonString();
     }
 }

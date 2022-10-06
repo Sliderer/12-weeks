@@ -11,11 +11,9 @@
             BackgroundColor="{StaticResource DarkGreen}"
            >
         <VerticalStackLayout>
-            <HorizontalStackLayout>
-                <Label x:Name="Title" Text="{Binding title}" Style="{StaticResource TaskTextH1}"
+            <components:DoneButton x:Name="DoneButton"/>
+            <Label x:Name="Title" Text="{Binding title}" Style="{StaticResource TaskTextH1}"
                        LineBreakMode="WordWrap"/>
-              
-            </HorizontalStackLayout>
             <Label x:Name="Description" Text="{Binding description}"  Style="{StaticResource TaskTextH2}"/>
             <Image Source="Resources/Images/Close.svg"
                    HorizontalOptions="End">

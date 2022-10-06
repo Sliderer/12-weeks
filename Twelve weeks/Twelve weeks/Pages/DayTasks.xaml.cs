@@ -55,6 +55,7 @@ public partial class DayTasks : ContentPage, ITaskPanel<DayTaskModel, DayTask>
     {
         DayTask task = new DayTask(model);
         task.deleteThisTask += DeleteTask;
+        task.changeCompletion += ChangeCompletion;
         TasksStackLayout.Children.Add(task); ;
     }
 
@@ -66,6 +67,12 @@ public partial class DayTasks : ContentPage, ITaskPanel<DayTaskModel, DayTask>
             TasksStackLayout.Children.Remove(task);
             Singletone.InfoSaver.DeleteModel(task.Model.GetJsonString(), FileNamesEnum.FileNames.DayTasksFileName);
         }
+    }
+
+    private void ChangeCompletion(DayTask task)
+    {
+        System.Diagnostics.Debug.Write($"UPDATE TASK: {task.Model.isDone}");
+        Singletone.InfoSaver.ChangeTaskCompletion<DayTaskModel>(task.Model, FileNamesEnum.FileNames.DayTasksFileName);
     }
 
     public void ClearEditors()

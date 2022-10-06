@@ -31,7 +31,8 @@ public partial class Routine : ContentPage, ITaskPanel<RoutineTaskModel, Routine
 	{
         RoutineTask task = new RoutineTask(model);
         task.deleteThisTask += DeleteTask;
-		TasksStackLayout.Children.Add(task); ;
+        task.changeCompletion += ChangeCompletion;
+        TasksStackLayout.Children.Add(task); 
 	}
 
 	private void AddTask_Clicked(object sender, EventArgs e)
@@ -54,6 +55,12 @@ public partial class Routine : ContentPage, ITaskPanel<RoutineTaskModel, Routine
     {
         ChangeGridsVisability(sender, e);
 		ClearEditors();
+    }
+
+    private void ChangeCompletion(RoutineTask task)
+    {
+        System.Diagnostics.Debug.Write($"UPDATE TASK: {task.Model.isDone}");
+        Singletone.InfoSaver.ChangeTaskCompletion<RoutineTaskModel>(task.Model, FileNamesEnum.FileNames.RoutineTasksFileName);
     }
 
     public void ChangeGridsVisability(object sender, EventArgs e)

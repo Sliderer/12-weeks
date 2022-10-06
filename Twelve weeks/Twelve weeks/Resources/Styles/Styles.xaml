@@ -47,7 +47,6 @@
     
     <Style x:Key="EditorH1" TargetType="Editor">
         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-        
         <Setter Property="WidthRequest" Value="300"/>
         <Setter Property="HeightRequest" Value="150"/>
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
@@ -57,7 +56,6 @@
 
     <Style x:Key="EditorH2" TargetType="Editor">
         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-
         <Setter Property="WidthRequest" Value="300"/>
         <Setter Property="HeightRequest" Value="50"/>
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
