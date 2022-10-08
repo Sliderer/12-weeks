@@ -18,7 +18,11 @@ public partial class Weeks : ContentPage
 
         if (models.Count == 0 || models[models.Count - 1].date.DayNumber / 7 < DateOnly.FromDateTime(DateTime.Now).DayNumber / 7)
         {
-            WeekModel model = new WeekModel() { date = DateOnly.FromDateTime(DateTime.Now), progress = 0 };
+            DateOnly date = DateOnly.FromDateTime(DateTime.Now);
+            WeekModel model = new WeekModel() { 
+                date = date,
+                progress = Singletone.ProgressUpdater.CountProgress(date)
+            };
             WeeksStackLayout.Children.Add(new WeekPanel(model));
             Singletone.InfoSaver.SaveModel(model, FileNamesEnum.FileNames.WeeksFileName);
         }

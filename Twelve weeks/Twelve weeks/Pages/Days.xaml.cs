@@ -19,7 +19,10 @@ public partial class Days : ContentPage
 
 		if (models.Count == 0 || models[models.Count - 1].date < DateOnly.FromDateTime(DateTime.Now))
 		{
-			DayModel dayModel = new DayModel() { date = DateOnly.FromDateTime(DateTime.Now), progress = 0 };
+			DayModel dayModel = new DayModel() { 
+				date = DateOnly.FromDateTime(DateTime.Now),
+                progress = Singletone.ProgressUpdater.CountProgress(DateOnly.FromDateTime(DateTime.Now))
+            };
 			models.Add(dayModel);
 			Singletone.InfoSaver.SaveModel(dayModel, FileNamesEnum.FileNames.DaysFileName);
 		}
@@ -28,7 +31,9 @@ public partial class Days : ContentPage
 
         foreach (var model in models)
         {
+			model.progress = Singletone.ProgressUpdater.CountProgress(model.date);
             DaysStackLayout.Children.Add(new DayPanel(model));
         }
     }
+
 }

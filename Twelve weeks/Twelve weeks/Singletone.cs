@@ -14,6 +14,7 @@ namespace Twelve_weeks
         private static Singletone instance;
         private IInfoSaver infoSaver;
         private IDatesSaver dateSaver;
+        private ProgressUpdater progressUpdater;
         private DateOnly dayDate;
 
         public Singletone(IInfoSaver saver, IDatesSaver dateSaver)
@@ -22,6 +23,15 @@ namespace Twelve_weeks
             instance = this;
             this.infoSaver = saver;
             this.dateSaver = dateSaver;
+            progressUpdater = new ProgressUpdater();
+        }
+
+        public static ProgressUpdater ProgressUpdater
+        {
+            get
+            {
+                return instance.progressUpdater;
+            }
         }
 
         public static IInfoSaver InfoSaver
