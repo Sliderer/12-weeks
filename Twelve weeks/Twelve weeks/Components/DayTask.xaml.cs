@@ -37,7 +37,6 @@ public partial class DayTask : ContentView
     public void ChangeCompletion(object sender, EventArgs e)
     {
         changeCompletion?.Invoke(this);
-        //System.Diagnostics.Debug.WriteLine("CHANGE");
     }
 
     public void SwitchDoneButtonColor()

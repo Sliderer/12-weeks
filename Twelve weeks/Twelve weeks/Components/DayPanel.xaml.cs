@@ -26,4 +26,12 @@ public partial class DayPanel : ContentView
 		Singletone.DayDate = dayModel.date;
 		AppShell.OpenPage(nameof(DayTasks), dayModel.date);
 	}
+
+	public DayModel DayModel
+	{
+		get
+		{
+			return dayModel;
+		}
+	}
 }

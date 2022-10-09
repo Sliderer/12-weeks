@@ -6,7 +6,9 @@ using Twelve_weeks.Enums;
 
 public partial class Weeks : ContentPage
 {
-	public Weeks()
+    private FileNamesEnum.FileNames fileName = FileNamesEnum.FileNames.WeekTasksFileName;
+
+    public Weeks()
 	{
 		InitializeComponent();
 
@@ -21,7 +23,7 @@ public partial class Weeks : ContentPage
             DateOnly date = DateOnly.FromDateTime(DateTime.Now);
             WeekModel model = new WeekModel() { 
                 date = date,
-                progress = Singletone.ProgressUpdater.CountProgress(date)
+                progress = Singletone.ProgressUpdater.CountProgress<WeekTaskModel>(date, fileName)
             };
             WeeksStackLayout.Children.Add(new WeekPanel(model));
             Singletone.InfoSaver.SaveModel(model, FileNamesEnum.FileNames.WeeksFileName);
@@ -31,6 +33,7 @@ public partial class Weeks : ContentPage
 
         foreach (var model in models)
         {
+            model.progress = Singletone.ProgressUpdater.CountProgress<WeekTaskModel>(model.date, fileName);
             WeeksStackLayout.Children.Add(new WeekPanel(model));
         }
     }

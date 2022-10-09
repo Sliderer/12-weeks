@@ -37,7 +37,7 @@ public partial class RoutineTask : ContentView
 
     public void ChangeCompletion(object sender, EventArgs e)
     {
-        changeCompletion?.Invoke(this);
+        changeCompletion.Invoke(this);
         //System.Diagnostics.Debug.WriteLine("CHANGE");
     }
 

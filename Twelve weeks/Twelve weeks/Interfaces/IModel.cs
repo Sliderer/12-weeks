@@ -10,6 +10,7 @@ namespace Twelve_weeks.Interfaces
     {
         int id { get; set; }
         bool isDone { get; set; }
+        DateOnly date { get; set; }
         string GetJsonString();
     }
 }

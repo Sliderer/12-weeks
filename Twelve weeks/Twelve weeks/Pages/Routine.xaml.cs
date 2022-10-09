@@ -8,10 +8,11 @@ using Twelve_weeks.Pages.Interfaces;
 
 public partial class Routine : ContentPage, ITaskPanel<RoutineTaskModel, RoutineTask>
 {
+	private FileNamesEnum.FileNames fileName = FileNamesEnum.FileNames.RoutineTasksFileName;
+
 	public Routine()
 	{
 		InitializeComponent();
-
         FillTaskStack();
     }
 

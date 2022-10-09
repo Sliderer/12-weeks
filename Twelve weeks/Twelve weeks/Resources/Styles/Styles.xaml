@@ -12,10 +12,13 @@
         <Setter Property="Shell.NavBarIsVisible" Value="False"/>
     </Style>
 
-    <Style x:Key="TaskTextH1" TargetType="Label">
+    <Style x:Key="BaseTextStyle" TargetType="Label">
+        <Setter Property="LineBreakMode" Value="WordWrap"/>
+    </Style>
+
+    <Style x:Key="TaskTextH1" TargetType="Label" BasedOn="{StaticResource BaseTextStyle}">
         <Setter Property="TextColor" Value="{StaticResource Cream}"/>
         <Setter Property="FontSize" Value="20"/>
-        
     </Style>
 
     <Style x:Key="DefaultButton" TargetType="Button">
@@ -25,20 +28,20 @@
         
     </Style>
 
-    <Style x:Key="TaskTextH2" TargetType="Label">
+    <Style x:Key="TaskTextH2" TargetType="Label" BasedOn="{StaticResource BaseTextStyle}">
         <Setter Property="TextColor" Value="{StaticResource Cream}"/>
         <Setter Property="FontSize" Value="15"/>
-
+        
     </Style>
 
-    <Style x:Key="TitleH1" TargetType="Label">
+    <Style x:Key="TitleH1" TargetType="Label" BasedOn="{StaticResource BaseTextStyle}">
         <Setter Property="HorizontalOptions" Value="Center"/>
         <Setter Property="HorizontalTextAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="30"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
 
-    <Style x:Key="TitleH2" TargetType="Label">
+    <Style x:Key="TitleH2" TargetType="Label" BasedOn="{StaticResource BaseTextStyle}">
         <Setter Property="HorizontalOptions" Value="Center"/>
         <Setter Property="HorizontalTextAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="15"/>

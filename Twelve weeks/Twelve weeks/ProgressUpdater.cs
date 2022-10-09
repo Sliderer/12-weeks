@@ -7,20 +7,22 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Twelve_weeks.Enums;
 using Twelve_weeks.Models;
+using Twelve_weeks.Interfaces;
+
 
 namespace Twelve_weeks
 {
     internal class ProgressUpdater
     {
-        public int CountProgress(DateOnly date)
+        public int CountProgress<T>(DateOnly date, FileNamesEnum.FileNames fileName) where T: IModel
         {
-            List<DayTaskModel> models = Singletone.InfoSaver.GetModelsList<DayTaskModel>(
-                FileNamesEnum.FileNames.DayTasksFileName
+            List<T> models = Singletone.InfoSaver.GetModelsList<T>(
+                fileName
             ).ToList();
 
             float completedTasksCount = 0, totalTasksCount = 0;
 
-            foreach (var model in models)
+            foreach (T model in models)
             {
                 if (model.date == date )
                 {

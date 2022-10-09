@@ -7,7 +7,7 @@
         <VerticalStackLayout x:Name="DefaultGrid">
             <Label x:Name="PageTitle" Text="Weeks" Style="{StaticResource TitleH1}"/>
 
-            <ScrollView HeightRequest="550">
+            <ScrollView HeightRequest="700">
                 <StackLayout x:Name="WeeksStackLayout">
 
                 </StackLayout>

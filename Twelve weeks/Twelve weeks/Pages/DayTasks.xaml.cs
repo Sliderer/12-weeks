@@ -6,7 +6,12 @@ using Twelve_weeks.Pages.Interfaces;
 
 public partial class DayTasks : ContentPage, ITaskPanel<DayTaskModel, DayTask>
 {
-	public DayTasks()
+    public  delegate void NeedUpdate();
+    public static event NeedUpdate needUpdate;
+
+    private FileNamesEnum.FileNames fileNames = FileNamesEnum.FileNames.DayTasksFileName;
+
+    public DayTasks()
 	{
 		InitializeComponent();
         FillTaskStack();
@@ -15,7 +20,7 @@ public partial class DayTasks : ContentPage, ITaskPanel<DayTaskModel, DayTask>
     public void FillTaskStack()
     {
         List<DayTaskModel> models = Singletone.InfoSaver.GetModelsList<DayTaskModel>(
-            FileNamesEnum.FileNames.DayTasksFileName
+            fileNames
         ).ToList();
         models.Reverse();
 
@@ -39,7 +44,7 @@ public partial class DayTasks : ContentPage, ITaskPanel<DayTaskModel, DayTask>
         string description = TaskDescription.Text;
         DayTaskModel model = new DayTaskModel() { title = title, description = description, date = Singletone.DayDate };
         AddTaskToStack(model);
-        Singletone.InfoSaver.SaveModel(model, FileNamesEnum.FileNames.DayTasksFileName);
+        Singletone.InfoSaver.SaveModel(model, fileNames);
 
         ChangeGridsVisability (sender, e);
     }
@@ -65,14 +70,14 @@ public partial class DayTasks : ContentPage, ITaskPanel<DayTaskModel, DayTask>
         if (result)
         {
             TasksStackLayout.Children.Remove(task);
-            Singletone.InfoSaver.DeleteModel(task.Model.GetJsonString(), FileNamesEnum.FileNames.DayTasksFileName);
+            Singletone.InfoSaver.DeleteModel(task.Model.GetJsonString(), fileNames);
         }
     }
 
     private void ChangeCompletion(DayTask task)
     {
-        System.Diagnostics.Debug.Write($"UPDATE TASK: {task.Model.isDone}");
-        Singletone.InfoSaver.ChangeTaskCompletion<DayTaskModel>(task.Model, FileNamesEnum.FileNames.DayTasksFileName);
+        needUpdate.Invoke();
+        Singletone.InfoSaver.ChangeTaskCompletion<DayTaskModel>(task.Model, fileNames);
     }
 
     public void ClearEditors()
